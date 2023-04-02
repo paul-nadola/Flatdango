@@ -72,34 +72,39 @@ displayMovies();
 
 
 function buyTickets() {
-  // const currentMovie = document.getElementById('current');
   const buyTick = document.getElementById('buy');
+  const dis = document.getElementById('current')
   
   buyTick.addEventListener('click', (event) => {
-    event.preventDefault(); // prevent default form submission
-    newSales = tickets_sold += 1; // increment tickets_sold by 1
-    fetch(`http://localhost:3000/films/`),{
+    event.preventDefault();
+    let tickets_sold = 0; // initialize tickets_sold
+    const selectedFilmId = event.target.id
+    let newSales = tickets_sold + 1;
+    
+    fetch(`http://localhost:3000/films/${selectedFilmId}]`, {
       method: 'PATCH',
-      headers:{
-        "Content-Type" : "application/json",
-        "Accept":  "application/json"
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
-      body: JSON.stringify(
-        {
-          tickets_sold : newSales
-        }
-      )
-    } //fetching and converting data from server
-      .then(res => res.json())
-      .then(films => films.forEach(film =>{
-        return film.tickets_sold
-      }))
-
+      body: JSON.stringify({
+        tickets_sold: newSales
       })
-      .catch(error => console.log(error)); // add catch block to handle errors
-  
+    })
+    .then(res => res.json())
+    .then(data => {
+      // loop over films array and update tickets_sold variable
+      data.forEach(film => {
+        tickets_sold = film.tickets_sold;
+      });
+      return `Tickets sold: ${tickets_sold}`
+    })
+    dis.appendChild(buyTick)
+    .catch(error => console.log(error)); 
+  });
 }
-// buyTickets()
+
+buyTickets()
 
         // const noOfTickets = parseInt(document.getElementById('numberOfTickets').value); // convert value to integer - user input on number of tickets
         // const newTicketsSold = film.tickets_sold + noOfTickets;
