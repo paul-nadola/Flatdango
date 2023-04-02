@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="flatdango.css"> <!--linking required stylesheets-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Flatdango</title>
+</head>
+<body>
+    
+    <header class ="header">
+        <h1>FLATDANGO</h1>
+<!-- importing theatre icon -->
+        <i class='bx bxs-movie-play' id="movie-icon"></i>
+    </header>
+    <div id ='main'>
+        <div id="movieTitle">
+            <!-- movie list will go here -->
+            <h1>MENU</h1>
+            <ul id = 'movieList'></ul>
+            <br>
+           <form> 
+            <!-- <div>
+            <label id ="label" for="numberOfTickets" placeholder = 'No of Tickets'>Enter the number of tickets you wish to purchase:</label>
+            <input type="number" id = 'numberOfTickets' required>
+            </div>
+            <br> -->
+            <div>
+                <!-- buy ticket button -->
+            <button type="submit" id = 'buy'>BUY TICKET</button>
+        </form>
+            </div>
+            <br>
+        </div>
+        <br>
+        <div id = 'display'>
+            <!-- movie details will go here -->
+            <li id = 'current'></li>
+        </div>
+    </div>
+    <!-- linking javascript -->
+    <script src="flatdango.js"></script>
+</body>
+</html>

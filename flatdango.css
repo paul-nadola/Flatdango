@@ -1,0 +1,96 @@
+ *{/*universal styling */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+  }
+  /* HTML styling */
+  :root{
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+  }
+  html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+  }
+  body{
+    background: var(--bg-color);
+    color: var(--text-color);
+  }
+  section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+  }
+.header{ /*header styling and moving characters to the center */
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+  }
+ #movie-icon{  /* enlarging the movie icon */
+    font-size: xx-large;
+  }
+  #main{
+    /* styling the main container */
+    display: flex;
+    float: inline-start 100px;
+    margin-top: auto;
+    width: 100%;
+  }
+  #movieTitle{
+    /* styling the title container ensuring it covers it well */
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 50px;;
+    background: var(--bg-color);
+    display: inline-flexbox;
+    justify-content: space-around;
+    align-items: flex-start;
+    z-index: 100;
+  }
+  #movieList{
+    width: 350px;
+    height: 650px;
+    display: inline-block;
+    flex-direction: row;
+    justify-content: space-between;
+
+  }
+  #display{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    overflow: auto;
+    justify-content: center;
+      
+  }
+li{
+    font-size: 30px;
+}
+#buy, #numberOfTickets{
+  font-size: xx-large;
+  background-color: #0ef;
+  text-shadow: #fff;
+}
+ #label{
+  font-size: x-large;
+  background-color: black;
+ }
+
