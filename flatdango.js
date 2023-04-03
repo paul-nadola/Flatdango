@@ -7,21 +7,21 @@ fetch(`http://localhost:3000/films`)
   .catch(error => console.error(error));//Fetching data ,passing it in our function
 
 function displayMovies(films) {//declaring our function
-  const currentFilm = document.getElementById('current');
-  const defaultFilm = films[0];
+  // const currentFilm = document.getElementById('current');
+  // const defaultFilm = films[0];
 
-  currentFilm.innerHTML = `
-    <div id='defMovie'>
-      <h2>${defaultFilm.title}</h2>
-      <p>Duration: ${defaultFilm.runtime} minutes</p>
-      <p>Maximum viewers: ${defaultFilm.capacity} people</p>
-      <p>Airing at: ${defaultFilm.showtime}</p>
-      <p>Tickets Sold: ${defaultFilm.tickets_sold} tickets</p>
-      <p>Description: ${defaultFilm.description}</p>
-      <button type="submit" id='buy'>BUY TICKET</button>
-      <img id="image" src="${defaultFilm.poster}">
-    </div>
-  `;
+  // currentFilm.innerHTML = `
+  //   <div id='defMovie'>
+  //     <h2>${defaultFilm.title}</h2>
+  //     <p>Duration: ${defaultFilm.runtime} minutes</p>
+  //     <p>Maximum viewers: ${defaultFilm.capacity} people</p>
+  //     <p>Airing at: ${defaultFilm.showtime}</p>
+  //     <p>Tickets Sold: ${defaultFilm.tickets_sold} tickets</p>
+  //     <p>Description: ${defaultFilm.description}</p>
+  //     <button type="submit" id='buy'>BUY TICKET</button>
+  //     <img id="image" src="${defaultFilm.poster}">
+  //   </div>
+  // `;
 
   const cardList = document.getElementById('movieList');//Grabbing elements and declaring variables
   films.forEach(film => {//iterating through the elements to display titles on the left side
